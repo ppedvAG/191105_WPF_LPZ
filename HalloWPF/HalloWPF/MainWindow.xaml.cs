@@ -27,7 +27,27 @@ namespace HalloWPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Hallo Welt");
+            MessageBox.Show(textBoxDemo.Text);
+        }
+
+        private void GrayGridMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Gray");
+        }
+
+        private void OrangeGridMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Orange");
+        }
+
+        private void HotPinkGridMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("HotPink");
+        }
+
+        private void RootGridMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Root-Grid");
         }
     }
 }

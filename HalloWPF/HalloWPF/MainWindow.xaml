@@ -8,11 +8,11 @@
         Title="Meine erste WPF-Anwendung" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
 
-    <Grid>
+    <Grid Background="Yellow" >
 
         <Button Content="Klick mich !"
                 HorizontalAlignment="Left"
-                Margin="172,43,0,0"
+                Margin="72,29,0,0"
                 VerticalAlignment="Top"
                 Width="195" Height="116" Foreground="White" 
                 Click="Button_Click">
@@ -27,6 +27,17 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+        <Button Click="Button_Click" Content="Button 1" HorizontalAlignment="Left" Margin="302,29,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Click="Button_Click" Content="Button 2" HorizontalAlignment="Left" Margin="302,53,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="textBoxDemo" HorizontalAlignment="Left" Height="23" Margin="302,78,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        
+        <Grid PreviewMouseDown="HotPinkGridMouseDown" Background="HotPink" HorizontalAlignment="Left" Height="201" Margin="459,29,0,0" VerticalAlignment="Top" Width="227">
+            <Grid PreviewMouseDown="OrangeGridMouseDown" Background="DarkOrange" HorizontalAlignment="Left" Height="130" Margin="26,32,0,0" VerticalAlignment="Top" Width="149">
+                <Grid PreviewMouseDown="GrayGridMouseDown" Background="Gray" HorizontalAlignment="Left" Height="43" Margin="42,52,0,0" VerticalAlignment="Top" Width="81"/>
+            </Grid>
+        </Grid>
+
+
 
     </Grid>
 
