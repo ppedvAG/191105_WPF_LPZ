@@ -5,10 +5,71 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Layoutcontainer"
         mc:Ignorable="d"
-        Title="Layoutcontainer" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Layoutcontainer" Height="536" Width="492.8" WindowStartupLocation="CenterScreen">
     <Grid>
-        
-        
-        
+        <Canvas Background="DarkSalmon" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100">
+            <Ellipse Height="10" Width="50" Fill="FloralWhite"
+                     Canvas.Top="20" Canvas.Left="10" />
+            <Ellipse Height="30" Width="30" Fill="LimeGreen"
+                     Canvas.Top="10" Canvas.Left="30" />
+            <Rectangle Fill="MistyRose" Height="20" Width="40"
+                       Canvas.Top="60" Canvas.Left="10"/>
+        </Canvas>
+        <StackPanel Background="Coral" HorizontalAlignment="Left" Height="100" Margin="123,10,0,0" VerticalAlignment="Top" Width="100">
+            <Label Content="Vorname:"/>
+            <TextBox Margin="5,0"/>
+            <Label Content="Nachname:"/>
+            <TextBox/>
+        </StackPanel>
+        <WrapPanel Background="DarkKhaki" Margin="239,11,29.6,308.4">
+            <Button Content="Button 1"/>
+            <Button Content="Button 2"/>
+            <Button Content="Button 3"/>
+            <Button Content="Button 4"/>
+            <Button Content="Button 5"/>
+            <Button Content="Button 6"/>
+            <Button Content="Button 7"/>
+            <Button Content="Button 8"/>
+        </WrapPanel>
+
+        <ScrollViewer Background="DimGray" Margin="10,125,0,193.4" HorizontalAlignment="Left" Width="141">
+            <StackPanel>
+                <Button Content="Button 1"/>
+                <Button Content="Button 2"/>
+                <Button Content="Button 3"/>
+                <Button Content="Button 4"/>
+                <Button Content="Button 5"/>
+                <Button Content="Button 6"/>
+                <Button Content="Button 7"/>
+                <Button Content="Button 8"/>
+            </StackPanel>
+        </ScrollViewer>
+        <Viewbox Margin="168,125,80.6,193.4">
+            <Label Content="Hallo Welt 😎"/>
+        </Viewbox>
+        <DockPanel LastChildFill="True" Background="YellowGreen" HorizontalAlignment="Left" Height="110" Margin="10,230,0,0" VerticalAlignment="Top" Width="390">
+            <Button Background="LawnGreen" Content="Button 3" DockPanel.Dock="Left"/>
+            <Button Background="ForestGreen" Content="Button 1" DockPanel.Dock="Top"/>
+            <Button Background="MediumSpringGreen" Content="Button 4"/>
+        </DockPanel>
+        <Grid Background="DarkOrchid" Margin="10,373,9.8,9.8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Button" Grid.Column="2" Grid.Row="1"/>
+            <Button Content="Button 2" Grid.Column="0" Grid.Row="1"
+                    Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        </Grid>
+
+
+
     </Grid>
 </Window>
