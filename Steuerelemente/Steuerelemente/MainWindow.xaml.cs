@@ -24,5 +24,28 @@ namespace Steuerelemente
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(comboBoxFrucht.Text +  sliderWert.Value);
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddElement(object sender, RoutedEventArgs e)
+        {
+            Random r = new Random();
+
+            var wert = r.Next(0, 3);
+            if(wert == 1)
+                listBoxIrgendwas.Items.Add("Hallo Welt");
+            else if (wert == 2)
+                listBoxIrgendwas.Items.Add(12);
+            else
+                listBoxIrgendwas.Items.Add(new Button { Content = "Button" });
+        }
     }
 }

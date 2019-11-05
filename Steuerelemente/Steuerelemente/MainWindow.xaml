@@ -5,8 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Steuerelemente"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Steuerlemente" Height="376.4" Width="800"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Label Content="Meine Beschiftung" BorderThickness="5" BorderBrush="Red"
+               HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="128" Height="36"/>
+        <TextBlock Text="Textblock - Text" HorizontalAlignment="Left" Margin="10,51,0,0" TextWrapping="Wrap"  VerticalAlignment="Top"/>
+        <Label HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="128">
+            <Label.Content>
+                <TextBox Width="100"/>
+            </Label.Content>
+        </Label>
+        <Image
+            Stretch="UniformToFill"
+            Source="https://www.zooroyal.de/magazin/wp-content/uploads/2017/04/hamster-760x560.jpg"
+            HorizontalAlignment="Left" Height="95" Margin="143,10,0,0" VerticalAlignment="Top" Width="125"/>
+        <Image Source="katze.jpg" HorizontalAlignment="Left" Height="95" Margin="273,10,0,0" VerticalAlignment="Top" Width="104"/>
+        <ComboBox x:Name="comboBoxFrucht" HorizontalAlignment="Left" Margin="389,10,0,0" VerticalAlignment="Top" Width="120">
+            <TextBlock Text="Apfel"/>
+            <TextBlock Text="Birne"/>
+            <TextBlock Text="Banane"/>
+            <Button Content="Button in der Combobox"/>
+            <TextBox Width="100"/>
+            <Image Source="katze.jpg" HorizontalAlignment="Left" Height="30" Width="30"/>
+
+        </ComboBox>
+        <Button Content="Zeig Inhalt" HorizontalAlignment="Left" Margin="423,51,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="584,24,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="584,44,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="584,64,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="678,24,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="678,44,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="678,64,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="sliderWert" Minimum="0" Maximum="100" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top" Width="226"/>
+        <ProgressBar Minimum="0" Maximum="100" IsIndeterminate="True" HorizontalAlignment="Left" Height="10" Margin="10,153,0,0" VerticalAlignment="Top" Width="220"/>
+
+        <Menu VerticalAlignment="Bottom">
+            <MenuItem Header="Datei">
+                <MenuItem Header="Speichern"/>
+                <MenuItem Header="Öffnen"/>
+                <MenuItem Header="Beenden"/>
+            </MenuItem>
+            <MenuItem Header="Hilfe" Click="MenuItem_Click"/>
+            <TextBlock Text="Suchen:"/>
+            <TextBox Width="200"/>
+        </Menu>
+        <ListBox x:Name="listBoxIrgendwas" HorizontalAlignment="Left" Height="101" Margin="13,194,0,0" VerticalAlignment="Top" Width="137">
+            <ListBoxItem Content="Apfel"/>
+            <ListBoxItem Content="Birne"/>
+            <ListBoxItem Content="Banane"/>
+            <TextBox Width="100"/>
+        </ListBox>
+        <Button Click="AddElement" Content="Element einfügen" HorizontalAlignment="Left" Margin="161,230,0,0" VerticalAlignment="Top" Width="157"/>
     </Grid>
 </Window>
