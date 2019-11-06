@@ -13,6 +13,60 @@
         FontFamily="Snap ITC" FontSize="15">
     <Window.Resources>
         <SolidColorBrush Color="YellowGreen" x:Key="specialButtonColor"/>
+
+        <!-- Expliziter Style-->
+        <Style TargetType="Button" x:Key="specialButtonStyle">
+            <Setter Property="Background" Value="MediumTurquoise"/>
+            <Setter Property="Foreground" Value="Goldenrod"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Height" Value="50"/>
+        </Style>
+
+        <Style TargetType="Button" x:Key="ButtonStyleChristos">
+            <Setter Property="Background" Value="CornflowerBlue"/>
+            <Setter Property="Foreground" Value="BlanchedAlmond"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+
+        <Style TargetType="Button" x:Key="ButtonStyleOliver">
+            <Setter Property="Background" Value="DarkCyan"/>
+            <Setter Property="Foreground" Value="DarkCyan"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="45"/>
+            <Setter Property="Height" Value="45"/>
+        </Style>
+
+        <Style TargetType="Button" x:Key="ButtonStyleJohannes">
+            <Setter Property="Background" Value="Gray"/>
+            <Setter Property="Foreground" Value="Cyan"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="20"/>
+            <Setter Property="Height" Value="20"/>
+        </Style>
+
+
+        <!-- Impliziter Style : Gilt automatisch für alle Buttons -->
+        <Style TargetType="Button"> <!-- Absichtlich x:Key weglassen !!!! -->
+            <Setter Property="Background" Value="DarkMagenta"/>
+            <Setter Property="Foreground" Value="Khaki"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Height" Value="50"/>
+        </Style>
+        
     </Window.Resources>
 
 
@@ -59,10 +113,10 @@
             <Label Content="Zahl2 :" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
             <TextBox x:Name="textBoxZahl2" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Margin="5"/>
 
-            <Button Foreground="{StaticResource specialButtonColor}" Content="+" Grid.Row="3" Grid.Column="0" FontSize="30" Height="50" Width="50" Margin="5" Click="buttonAddieren_Click"/>
-            <Button Foreground="{StaticResource specialButtonColor}" Content="-" Grid.Row="3" Grid.Column="1" FontSize="30" Height="50" Width="50" Margin="5" Click="buttonSubtrahieren_Click"/>
-            <Button Foreground="{StaticResource specialButtonColor}" Content="*" Grid.Row="3" Grid.Column="2" FontSize="30" Height="50" Width="50" Margin="5" Click="buttonMultiplizieren_Click"/>
-            <Button Foreground="{DynamicResource specialButtonColor}" Content="/" Grid.Row="3" Grid.Column="3" FontSize="30" Height="50" Width="50" Margin="5" Click="buttonDividieren_Click">
+            <Button Style="{StaticResource specialButtonStyle}" Content="+" Grid.Row="3" Grid.Column="0" Click="buttonAddieren_Click"/>
+            <Button Style="{StaticResource specialButtonStyle}" Content="-" Grid.Row="3" Grid.Column="1" Click="buttonSubtrahieren_Click"/>
+            <Button Style="{StaticResource specialButtonStyle}" Content="*" Grid.Row="3" Grid.Column="2" Click="buttonMultiplizieren_Click"/>
+            <Button Content="/" Grid.Row="3" Grid.Column="3" Click="buttonDividieren_Click">
                <!-- DynamicResource kann "Green" sehen, StaticResource nicht !!!! -->
                 <Button.Resources>
                     <SolidColorBrush Color="Green" x:Key="specialButtonColor"/>

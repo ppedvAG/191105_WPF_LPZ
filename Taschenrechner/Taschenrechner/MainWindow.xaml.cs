@@ -44,6 +44,23 @@ namespace Taschenrechner
             }
         }
 
+        private void ChangeStyle(object sender)
+        {
+            // this.Resources; // <-- <Window.Resources>
+            // Application.Current.Resources // app.xaml - Ressourcen
+
+            Random r = new Random();
+            int wert = r.Next(0, 3);
+            Button auslöser = (Button)sender;
+
+            if (wert == 0)
+                auslöser.Style = (Style)Resources["ButtonStyleChristos"];
+            else if (wert == 1)
+                auslöser.Style = (Style)Resources["ButtonStyleOliver"];
+            else
+                auslöser.Style = (Style)Resources["ButtonStyleJohannes"];
+        }
+
         private void buttonAddieren_Click(object sender, RoutedEventArgs e)
         {
             // float und double: Zahlen auf Basis 2
@@ -56,6 +73,7 @@ namespace Taschenrechner
             decimal zahl2 = Convert.ToDecimal(textBoxZahl2.Text,Thread.CurrentThread.CurrentCulture); // de-AT
 
             labelErgebnis.Content = zahl1 + zahl2;
+            ChangeStyle(sender);
         }
 
         private void buttonSubtrahieren_Click(object sender, RoutedEventArgs e)
@@ -64,6 +82,7 @@ namespace Taschenrechner
             decimal zahl2 = Convert.ToDecimal(textBoxZahl2.Text, Thread.CurrentThread.CurrentCulture); // de-AT
 
             labelErgebnis.Content = zahl1 - zahl2;
+            ChangeStyle(sender);
         }
 
         private void buttonMultiplizieren_Click(object sender, RoutedEventArgs e)
@@ -72,6 +91,7 @@ namespace Taschenrechner
             decimal zahl2 = Convert.ToDecimal(textBoxZahl2.Text, Thread.CurrentThread.CurrentCulture); // de-AT
 
             labelErgebnis.Content = zahl1 * zahl2;
+            ChangeStyle(sender);
         }
 
         private void buttonDividieren_Click(object sender, RoutedEventArgs e)
@@ -86,6 +106,7 @@ namespace Taschenrechner
             decimal zahl2 = Convert.ToDecimal(textBoxZahl2.Text, Thread.CurrentThread.CurrentCulture); // de-AT
 
             labelErgebnis.Content = zahl1 / zahl2;
+            ChangeStyle(sender);
         }
     }
 }
