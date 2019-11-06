@@ -9,6 +9,7 @@
     <Grid>
         <Grid.Resources>
             <BooleanToVisibilityConverter x:Key="bool2vis"/>
+            <local:Farbkonverter x:Key="farbkonverter"/>
         </Grid.Resources>
         
         <TextBox x:Name="textBoxWert" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
@@ -19,7 +20,9 @@
         
         
         <TextBox x:Name="textBoxFarbe" HorizontalAlignment="Left" Height="23" Margin="199,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Rectangle x:Name="rectangleFarbe" Visibility="{Binding IsChecked,ElementName=checkBoxFarbe,Converter={StaticResource bool2vis}}" Fill="{Binding Text,ElementName=textBoxFarbe}" HorizontalAlignment="Left" Height="100" Margin="199,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="120"/>
+        <Rectangle x:Name="rectangleFarbe"
+                   Visibility="{Binding IsChecked,ElementName=checkBoxFarbe,Converter={StaticResource bool2vis}}"
+                   Fill="{Binding Text,ElementName=textBoxFarbe,Converter={StaticResource farbkonverter}}" HorizontalAlignment="Left" Height="100" Margin="199,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="120"/>
         <CheckBox x:Name="checkBoxFarbe" Content="Sichtbar ?" HorizontalAlignment="Left" Margin="199,143,0,0" VerticalAlignment="Top" Width="120"/>
 
 
