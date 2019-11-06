@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Taschenrechner"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush Color="HotPink" x:Key="specialButtonColor"/>
     </Application.Resources>
 </Application>

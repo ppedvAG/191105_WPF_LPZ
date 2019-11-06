@@ -29,6 +29,9 @@ namespace Taschenrechner
 
         private void labelClose_Click(object sender, MouseButtonEventArgs e)
         {
+            // Hinweis: Mausklick wird sowohl von "MoveWindow" als auch von dem Label erkannt
+            // -> Ziel: Anstelle von "Verschieben" soll geschlossen werden -> Bubbling/Tunneling
+
             // Schließen einer WPF-Anwendung
             Close();
         }

@@ -11,6 +11,9 @@
         AllowsTransparency="True"
         WindowStyle="None" Background="{x:Null}"
         FontFamily="Snap ITC" FontSize="15">
+    <Window.Resources>
+        <SolidColorBrush Color="YellowGreen" x:Key="specialButtonColor"/>
+    </Window.Resources>
 
 
     <Border BorderThickness="5" BorderBrush="Black" CornerRadius="20"
@@ -21,6 +24,12 @@
                 <GradientStop Color="#B211AAD0" Offset="1"/>
             </LinearGradientBrush>
         </Border.Background>
+        
+        <!--<Border.Resources>
+            <SolidColorBrush Color="Red" x:Key="specialButtonColor"/>
+        </Border.Resources>-->
+        
+
         <Grid Margin="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -36,6 +45,10 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
+            <!--<Grid.Resources>
+                <SolidColorBrush Color="Orange" x:Key="specialButtonColor"/>
+            </Grid.Resources>-->
+
             <Label Content="X" FontSize="20" Grid.Row="0" Grid.Column="3"
                    HorizontalContentAlignment="Right" VerticalContentAlignment="Top" FontWeight="Bold" FontFamily="Snap ITC"
                    PreviewMouseLeftButtonDown="labelClose_Click"/>
@@ -46,10 +59,15 @@
             <Label Content="Zahl2 :" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
             <TextBox x:Name="textBoxZahl2" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Margin="5"/>
 
-            <Button Content="+" Grid.Row="3" Grid.Column="0" FontSize="30" Height="50" Width="50" Margin="5" Click="buttonAddieren_Click"/>
-            <Button Content="-" Grid.Row="3" Grid.Column="1" FontSize="30" Height="50" Width="50" Margin="5" Click="buttonSubtrahieren_Click"/>
-            <Button Content="*" Grid.Row="3" Grid.Column="2" FontSize="30" Height="50" Width="50" Margin="5" Click="buttonMultiplizieren_Click"/>
-            <Button Content="/" Grid.Row="3" Grid.Column="3" FontSize="30" Height="50" Width="50" Margin="5" Click="buttonDividieren_Click"/>
+            <Button Foreground="{StaticResource specialButtonColor}" Content="+" Grid.Row="3" Grid.Column="0" FontSize="30" Height="50" Width="50" Margin="5" Click="buttonAddieren_Click"/>
+            <Button Foreground="{StaticResource specialButtonColor}" Content="-" Grid.Row="3" Grid.Column="1" FontSize="30" Height="50" Width="50" Margin="5" Click="buttonSubtrahieren_Click"/>
+            <Button Foreground="{StaticResource specialButtonColor}" Content="*" Grid.Row="3" Grid.Column="2" FontSize="30" Height="50" Width="50" Margin="5" Click="buttonMultiplizieren_Click"/>
+            <Button Foreground="{DynamicResource specialButtonColor}" Content="/" Grid.Row="3" Grid.Column="3" FontSize="30" Height="50" Width="50" Margin="5" Click="buttonDividieren_Click">
+               <!-- DynamicResource kann "Green" sehen, StaticResource nicht !!!! -->
+                <Button.Resources>
+                    <SolidColorBrush Color="Green" x:Key="specialButtonColor"/>
+                </Button.Resources>
+            </Button>
 
             <Label x:Name="labelErgebnis" HorizontalContentAlignment="Center" Content="---Ergebnis---" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4"/>
         </Grid>
