@@ -5,8 +5,91 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ListenTemplates"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Personenliste" Height="450" Width="300"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button Content="Person einfügen" Margin="5" Click="buttonEinfügen_Click"/>
+        <ListBox Grid.Row="1" x:Name="listBoxPersonen" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <!-- Falls nur 1 Template existiert : -->
+            <!--<ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="{Binding ImageURL}" Grid.RowSpan="2"/>
+                        <TextBlock Text="{Binding Vorname}" Grid.Row="0" Grid.Column="1"/>
+                        <TextBlock Text="{Binding Kontostand}" Grid.Row="1" Grid.Column="1"/>
+
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>-->
+            
+            <!-- Falls man mehrere Templates braucht: -->
+            <ListBox.Resources>
+                <DataTemplate DataType="{x:Type local:Person}">
+                    <Grid Margin="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="{Binding ImageURL}" Grid.RowSpan="2"/>
+                        <TextBlock Text="{Binding Vorname}" Grid.Row="0" Grid.Column="1"/>
+                        <TextBlock Text="{Binding Kontostand}" Grid.Row="1" Grid.Column="1"/>
+
+                    </Grid>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local:Mitarbeiter}">
+                    <Grid Margin="2" Background="MidnightBlue" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="{Binding ImageURL}" Grid.RowSpan="2"/>
+                        <TextBlock Text="{Binding Vorname}" Grid.Row="0" Grid.Column="1"/>
+                        <TextBlock Text="{Binding MitarbeiterID}" Grid.Row="1" Grid.Column="1"/>
+
+                    </Grid>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type local:Kunde}">
+                    <Grid Margin="2" Background="CornflowerBlue">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="{Binding ImageURL}" Grid.RowSpan="2"/>
+                        <TextBlock Text="{Binding Vorname}" Grid.Row="0" Grid.Column="1"/>
+                        <CheckBox IsChecked="{Binding Stammkunde}" Grid.Row="1" Grid.Column="1"/>
+
+                    </Grid>
+                </DataTemplate>
+            </ListBox.Resources>
+        </ListBox>
     </Grid>
 </Window>
