@@ -96,6 +96,23 @@
         <Button Content="Demo" HorizontalAlignment="Left" Margin="507,169,0,0" VerticalAlignment="Top" 
                 Width="100" Height="100" Background="ForestGreen"
                 Style="{DynamicResource EllipseButton}"/>
+        <Rectangle HorizontalAlignment="Left" Height="82" Margin="30,326,0,0" VerticalAlignment="Top" Width="90">
+            <Rectangle.Style>
+                <Style TargetType="Rectangle">
+                    <Setter Property="Fill" Value="Blue"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=textBoxFarbe,Path=Text}" Value="Green">
+                            <Setter Property="Fill" Value="Green"/>
+                        </DataTrigger>
+                        
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Fill" Value="Red"/>
+                        </Trigger>
+
+                    </Style.Triggers>
+                </Style>
+            </Rectangle.Style>
+        </Rectangle>
 
 
 
