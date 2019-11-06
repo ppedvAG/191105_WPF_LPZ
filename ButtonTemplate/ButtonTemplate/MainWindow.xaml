@@ -9,20 +9,31 @@
     <Window.Resources>
         <ControlTemplate x:Key="ImageButtonTemplate" TargetType="{x:Type Button}">
 
-            <Border BorderBrush="Black" BorderThickness="2" CornerRadius="30" Background="Red">
+
+            <Border BorderBrush="Black" BorderThickness="2" CornerRadius="30">
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Setter Property="Background" Value="Red"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Orange"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
                 <StackPanel Orientation="Horizontal" Margin="10">
                     <Image Source="http://www.spielfigurenportal.de/WebRoot/Store13/Shops/64412781/5A54/ABE5/8F73/458D/19D1/0A0C/6D02/595A/387275.jpg" Height="35" Width="35"/>
                     <ContentPresenter Margin="20,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </StackPanel>
             </Border>
-            
+
         </ControlTemplate>
     </Window.Resources>
     <Grid>
         <Button Content="Klick mich !" HorizontalAlignment="Left" Margin="267,101,0,0" VerticalAlignment="Top" Width="204" Height="86"
                 Template="{StaticResource ImageButtonTemplate}"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="546,101,0,0" VerticalAlignment="Top" Width="75" Style="{DynamicResource NewDefaultButtonStyle}"/>
-        <CheckBox IsChecked="True" Content="CheckBox" HorizontalAlignment="Left" Margin="548,161,0,0" VerticalAlignment="Top" Width="88" Style="{DynamicResource NewCheckboxStyle}">
+        <CheckBox x:Name="checkBox" IsChecked="True" Content="CheckBox" HorizontalAlignment="Left" Margin="548,161,0,0" VerticalAlignment="Top" Width="88" Style="{DynamicResource NewCheckboxStyle}">
             <CheckBox.Resources>
                 <Style x:Key="NewCheckboxStyle" TargetType="{x:Type CheckBox}">
                     <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
@@ -78,7 +89,7 @@
                                         <Setter Property="Opacity" TargetName="indeterminateMark" Value="0"/>
                                     </Trigger>
                                     <Trigger Property="IsChecked" Value="{x:Null}">
-                                        <Setter Property="Opacity" TargetName="optionMark" Value="0"/>
+                                        <Setter Property="Text" TargetName="optionMark" Value="LEER"/>
                                         <Setter Property="Opacity" TargetName="indeterminateMark" Value="1"/>
                                     </Trigger>
                                 </ControlTemplate.Triggers>
