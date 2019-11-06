@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Binding_Demo"
         mc:Ignorable="d"
-        Title="Binding Demo" Height="450" Width="800">
+        Title="Binding Demo" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.Resources>
+            <BooleanToVisibilityConverter x:Key="bool2vis"/>
+        </Grid.Resources>
         
+        <TextBox x:Name="textBoxWert" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="labelWert"
+               Content="{Binding ElementName=textBoxWert,Path=Text}" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="120"/>
+        <Slider Minimum="0" Maximum="100"
+                Value="{Binding Text, ElementName=textBoxWert,Mode=TwoWay}" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Width="120"/>
+        
+        
+        <TextBox x:Name="textBoxFarbe" HorizontalAlignment="Left" Height="23" Margin="199,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Rectangle x:Name="rectangleFarbe" Visibility="{Binding IsChecked,ElementName=checkBoxFarbe,Converter={StaticResource bool2vis}}" Fill="{Binding Text,ElementName=textBoxFarbe}" HorizontalAlignment="Left" Height="100" Margin="199,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="checkBoxFarbe" Content="Sichtbar ?" HorizontalAlignment="Left" Margin="199,143,0,0" VerticalAlignment="Top" Width="120"/>
+
+
+
     </Grid>
 </Window>
