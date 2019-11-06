@@ -23,6 +23,8 @@ namespace Binding_Demo
         public MainWindow()
         {
             InitializeComponent();
+            //Console.WriteLine("Die Summe von {0} und {1} ist {2}", 12, 3, 15);
+            //Console.WriteLine($"Die Summe von {12} und {3} ist {12+3}");
         }
     }
 }

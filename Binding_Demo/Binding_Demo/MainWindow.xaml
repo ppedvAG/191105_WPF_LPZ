@@ -6,24 +6,97 @@
         xmlns:local="clr-namespace:Binding_Demo"
         mc:Ignorable="d"
         Title="Binding Demo" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:Namenskonverter x:Key="namenskonverter"/>
+        <Style TargetType="Button" x:Key="EllipseButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Background}"
+                                     
+                                     Height="{TemplateBinding Height}"
+                                     Width="{TemplateBinding Width}"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.Resources>
             <BooleanToVisibilityConverter x:Key="bool2vis"/>
             <local:Farbkonverter x:Key="farbkonverter"/>
+            <local:Namenskonverter x:Key="namenskonverter"/>
         </Grid.Resources>
-        
+
         <TextBox x:Name="textBoxWert" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="labelWert"
                Content="{Binding ElementName=textBoxWert,Path=Text}" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="120"/>
         <Slider Minimum="0" Maximum="100"
                 Value="{Binding Text, ElementName=textBoxWert,Mode=TwoWay}" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Width="120"/>
-        
-        
+
+
         <TextBox x:Name="textBoxFarbe" HorizontalAlignment="Left" Height="23" Margin="199,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <Rectangle x:Name="rectangleFarbe"
                    Visibility="{Binding IsChecked,ElementName=checkBoxFarbe,Converter={StaticResource bool2vis}}"
                    Fill="{Binding Text,ElementName=textBoxFarbe,Converter={StaticResource farbkonverter}}" HorizontalAlignment="Left" Height="100" Margin="199,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="120"/>
-        <CheckBox x:Name="checkBoxFarbe" Content="Sichtbar ?" HorizontalAlignment="Left" Margin="199,143,0,0" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="checkBoxFarbe" IsChecked="True" Content="Sichtbar ?" HorizontalAlignment="Left" Margin="199,143,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxVorname" HorizontalAlignment="Left" Height="23" Margin="377,10,0,0" TextWrapping="Wrap" Text="Michael" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxNachname" HorizontalAlignment="Left" Height="23" Margin="377,38,0,0" TextWrapping="Wrap" Text="Zöhling" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="377,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
+            <TextBlock.Text>
+                <MultiBinding Converter="{StaticResource namenskonverter}">
+                    <Binding ElementName="textBoxVorname" Path="Text"/>
+                    <Binding ElementName="textBoxNachname" Path="Text"/>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+
+        <!-- Funktioniert nur mit Strings !!!! also nur mit TextBlock und NICHT mit dem Label-->
+        <TextBlock HorizontalAlignment="Left" Margin="377,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
+            <TextBlock.Text>
+                <MultiBinding StringFormat="{}{0} {1}" >
+                    <Binding ElementName="textBoxVorname" Path="Text"/>
+                    <Binding ElementName="textBoxNachname" Path="Text"/>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+        <Label HorizontalAlignment="Left" Margin="487,79,0,0" VerticalAlignment="Top" Width="129">
+            <Label.Content>
+                <MultiBinding StringFormat="{}{0} {1}" >
+                    <!-- Beispiel das es nicht geht !!! Converter würde aber Funktionieren !-->
+                    <Binding ElementName="textBoxVorname" Path="Text"/>
+                    <Binding ElementName="textBoxNachname" Path="Text"/>
+                </MultiBinding>
+            </Label.Content>
+        </Label>
+        <Rectangle Fill="#FFF4F4F5"
+                   Height="{Binding RelativeSource={RelativeSource Mode=Self},Path=Width}"
+                   Width="100"
+                   
+                   HorizontalAlignment="Left"
+                   Margin="30,185,0,0"
+                   Stroke="Black"
+                   VerticalAlignment="Top"/>
+        <Grid Background="MediumSlateBlue" HorizontalAlignment="Left" Height="122" Margin="199,185,0,0" VerticalAlignment="Top" Width="179">
+            <Grid Background="BlanchedAlmond" HorizontalAlignment="Left" Height="100" Margin="36,12,0,0" VerticalAlignment="Top" Width="100">
+                <Button Content="Button"
+                        
+                        Foreground="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Grid,AncestorLevel=2},Path=Background}"
+
+                HorizontalAlignment="Left" Margin="15,44,0,0" VerticalAlignment="Top" Width="75"/>
+            </Grid>
+
+
+
+        </Grid>
+        <Button Content="Demo" HorizontalAlignment="Left" Margin="507,169,0,0" VerticalAlignment="Top" 
+                Width="100" Height="100" Background="ForestGreen"
+                Style="{DynamicResource EllipseButton}"/>
+
 
 
 
