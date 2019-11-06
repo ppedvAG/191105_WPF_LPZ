@@ -24,6 +24,8 @@ namespace Binding_Demo
                 return Brushes.Yellow;
             else
                 return Brushes.Blue;
+
+          var x = new SolidColorBrush(Color.FromRgb(10, 50, 100))
         }
 
         // TwoWay-Binding
