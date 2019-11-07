@@ -1,3 +1,13 @@
 Einführung .NET Standard:
 https://devblogs.microsoft.com/dotnet/introducing-net-standard/
 
+Platzhalterbilder:
+ ---> /größe/farbeInHex (RGB)
+http://via.placeholder.com/200/C0FFEE
+
+http://placekitten.com/200/700
+http://placebacon.com/400/300
+https://www.placecage.com/g/200/300
+https://www.stevensegallery.com/
+http://www.fillmurray.com/
+http://lorempixel.com/400/200/sports
