@@ -4,17 +4,65 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVM_Simpel"
+        
+        xmlns:vm="clr-namespace:MVVM_Simpel.ViewModel"
+        
+        
         mc:Ignorable="d"
-        Title="Personenverwaltung" Height="300" Width="200"
+        Title="Personenverwaltung" Height="295.2" Width="344"
         WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <!--Standarddatenquelle für jedes einzelne Binding -->
+        <vm:MainViewModel/>
+    </Window.DataContext>
+
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Button Content="Lade Personen" Command=" Kommando für den Button ???? "/>
-        <ListBox Grid.Row="1" ItemsSource=" Datenquelle für die Liste ???? " />
+        <Button Content="Lade Personen" Command="{Binding GetPersonenCommand}" />
+        <ListBox Grid.Row="1" ItemsSource="{Binding Personenliste}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                               Source="{Binding ImageURL}" Height="100" Width="100" Margin="10"/>
+
+                        <TextBlock Grid.Row="0" Grid.Column="1">
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0} {1}">
+                                    <Binding Path="Vorname"/>
+                                    <Binding Path="Nachname"/>
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+
+                        <TextBlock Grid.Row="1" Grid.Column="1"
+                                   Text="{Binding Kontostand}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
     </Grid>
+
+    <!--<DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Alle Personen laden" Command="{Binding GetPersonenCommand}"/>
+        </Menu>
+        <ListBox ItemsSource="{Binding Personenliste}"/>
+    </DockPanel>-->
+
 </Window>
