@@ -11,3 +11,8 @@ https://www.placecage.com/g/200/300
 https://www.stevensegallery.com/
 http://www.fillmurray.com/
 http://lorempixel.com/400/200/sports
+
+https://any-api.com/
+
+https://api.deutschebahn.com/freeplan/v1/location/Leipzig
+https://api.deutschebahn.com/freeplan/v1/departureBoard/8010205?date=2019-11-06
