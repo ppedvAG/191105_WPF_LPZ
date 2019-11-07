@@ -5,9 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVM_Simpel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="Personenverwaltung" Height="300" Width="200"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button Content="Lade Personen" Command=" Kommando für den Button ???? "/>
+        <ListBox Grid.Row="1" ItemsSource=" Datenquelle für die Liste ???? " />
+
     </Grid>
 </Window>
