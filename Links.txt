@@ -14,5 +14,9 @@ http://lorempixel.com/400/200/sports
 
 https://any-api.com/
 
+https://developer.deutschebahn.com/store/apis/info?name=Fahrplan-Free&version=v1&provider=DBOpenData#!/default/get_departureBoard_id
 https://api.deutschebahn.com/freeplan/v1/location/Leipzig
 https://api.deutschebahn.com/freeplan/v1/departureBoard/8010205?date=2019-11-06
+
+
+http://json2csharp.com/
