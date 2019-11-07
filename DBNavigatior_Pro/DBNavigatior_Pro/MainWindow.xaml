@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DBNavigatior_Pro"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="DB Navigator - Pro Edition 😎🚅" Height="450" Width="800">
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox Text="{Binding SearchString,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+        <Button Grid.Column="1" Content="Suchen !" Command="{Binding GetLocationCommand}"/>
+
+        <ListBox Height="200" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                 ItemsSource="{Binding Locations}"
+                 SelectedItem="{Binding CurrentLocation,Mode=OneWayToSource}"
+                 DisplayMemberPath="name"/>
+
+        <DataGrid Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding DepartureBoards}"/>
+
     </Grid>
 </Window>

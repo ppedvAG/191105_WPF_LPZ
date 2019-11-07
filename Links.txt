@@ -20,3 +20,11 @@ https://api.deutschebahn.com/freeplan/v1/departureBoard/8010205?date=2019-11-06
 
 
 http://json2csharp.com/
+
+https://api.deutschebahn.com/freeplan/v1/journeyDetails/68316%252F38742%252F15710%252F14917%252F80%253fstation_evaId%253D8000096
+https://api.deutschebahn.com/freeplan/v1/journeyDetails/942570%2F327227%2F568384%2F29998%2F80%3fstation_evaId%3D8010205
+
+Leipzig:
+900414/311705/314516/142880/80?station_evaId=8000096
+Stuttgart:
+68316%2F38742%2F15710%2F14917%2F80%3fstation_evaId%3D8000096

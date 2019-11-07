@@ -1,8 +1,9 @@
 ﻿namespace Model
 {
-    public class DepartureBoard
+    public class ArrivalBoard
     {
         public string name { get; set; }
+        public string origin { get; set; }
         public string type { get; set; }
         public int boardId { get; set; }
         public int stopId { get; set; }

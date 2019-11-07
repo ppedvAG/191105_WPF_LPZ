@@ -19,19 +19,19 @@ namespace Model
             // JSON Deserialisieren
             return JsonConvert.DeserializeObject<List<Location>>(json);
         }
-        public List<DepartureBoard> GetDepartureBoardForLocation(Location currentLocation)
+        public List<ArrivalBoard> GetDepartureBoardForLocation(Location currentLocation)
         {
             // REST-API aufrufen:
             string json;
             using (HttpClient client = new HttpClient())
             {
-                json = client.GetStringAsync($"https://api.deutschebahn.com/freeplan/v1/departureBoard/{currentLocation.id}?date={DateTime.Now.ToString("yyyy-MM-dd")}").Result; // Synchron -> Blockiert
+                json = client.GetStringAsync($"https://api.deutschebahn.com/freeplan/v1/arrivalBoard/{currentLocation.id}?date={DateTime.Now.ToString("yyyy-MM-dd")}T{DateTime.Now.ToString("HH:mm:ss")}").Result; // Synchron -> Blockiert
             }
 
             // JSON Deserialisieren
-            return JsonConvert.DeserializeObject<List<DepartureBoard>>(json);
+            return JsonConvert.DeserializeObject<List<ArrivalBoard>>(json);
         }
-        public List<JourneyDetails> GetJourneyDetails(DepartureBoard departure)
+        public List<JourneyDetails> GetJourneyDetails(ArrivalBoard departure)
         {
             // REST-API aufrufen:
             string json;

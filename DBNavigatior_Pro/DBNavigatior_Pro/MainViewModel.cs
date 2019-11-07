@@ -29,8 +29,8 @@ namespace DBNavigatior_Pro
         }
         private void GetJourneyDetails()
         {
-           JourneyDetails = service.GetJourneyDetails(CurrentDepartureBoard);
-           PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(JourneyDetails)));
+            JourneyDetails = service.GetJourneyDetails(CurrentDepartureBoard);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(JourneyDetails)));
         }
         private void GetLocation()
         {
@@ -43,11 +43,25 @@ namespace DBNavigatior_Pro
         // Elemente, die in der Oberfläche ausgewählt sind
         // -> TwoWayBinding !!! (mindestens: OneWayToSource)
         public string SearchString { get; set; }
-        public Location CurrentLocation { get; set; }
-        public DepartureBoard CurrentDepartureBoard { get; set; }
+
+        private Location currentLocation;
+        public Location CurrentLocation
+        { 
+            get => currentLocation;
+            set
+            {
+                currentLocation = value;
+                if(value != null)
+                {
+                    GetDepartureBoardsFromLocation();
+                }
+            }
+        }
+
+        public ArrivalBoard CurrentDepartureBoard { get; set; }
 
         public List<Location> Locations { get; set; }
-        public List<DepartureBoard> DepartureBoards { get; set; }
+        public List<ArrivalBoard> DepartureBoards { get; set; }
         public List<JourneyDetails> JourneyDetails { get; set; }
 
 

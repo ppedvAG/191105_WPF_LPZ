@@ -24,7 +24,7 @@ namespace DBNavigatior_Pro
 
         public void Execute(object parameter)
         {
-            return execute();
+            execute();
         }
     }
 }
