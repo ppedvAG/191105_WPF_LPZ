@@ -24,17 +24,18 @@ namespace DBNavigatior_Pro
 
         private void GetDepartureBoardsFromLocation()
         {
-            throw new NotImplementedException();
+            DepartureBoards = service.GetDepartureBoardForLocation(CurrentLocation);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DepartureBoards)));
         }
-
         private void GetJourneyDetails()
         {
-            throw new NotImplementedException();
+           JourneyDetails = service.GetJourneyDetails(CurrentDepartureBoard);
+           PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(JourneyDetails)));
         }
-
         private void GetLocation()
         {
-            throw new NotImplementedException();
+            Locations = service.GetLocation(SearchString);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Locations)));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
