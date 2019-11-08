@@ -41,3 +41,5 @@ Prism (Microsoft)
 MVVMLight (Galasoft)
 MVVMCross (für Mobile Geräte u.Ä.)
 
+Regex für Email:
+http://emailregex.com/

@@ -10,6 +10,7 @@
         <TextBox Text="{Binding Value,ElementName=sliderEingabe,ValidatesOnExceptions=True,UpdateSourceTrigger=PropertyChanged}" x:Name="textBoxEingabe" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Slider x:Name="sliderEingabe" Minimum="0" Maximum="100"
                  HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="120"/>
+        <local:EmailTextBox Email="abcde" HorizontalAlignment="Left" Height="19" Margin="68,131,0,0" VerticalAlignment="Top" Width="284"/>
 
     </Grid>
 </Window>
