@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Media"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded">
     <Grid>
-        
+        <Button Content="Beep" HorizontalAlignment="Left" Margin="34,40,0,0" VerticalAlignment="Top" Width="172" Click="Button_Click"/>
+        <MediaElement x:Name="mediaElement" HorizontalAlignment="Left" Height="283" Margin="34,75,0,0" VerticalAlignment="Top" Width="748"/>
+        <Button Content="Speak" HorizontalAlignment="Left" Margin="544,376,0,0" VerticalAlignment="Top" Width="172" Height="21" RenderTransformOrigin="0.5,0.5" Click="Button_Click_1"/>
+        <TextBox x:Name="textBoxInhalt" HorizontalAlignment="Left" Height="23" Margin="34,374,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="277"/>
+        <ComboBox x:Name="comboBoxVoices" HorizontalAlignment="Left" Margin="336,375,0,0" VerticalAlignment="Top" Width="165"/>
+
     </Grid>
 </Window>
