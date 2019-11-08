@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -13,5 +14,10 @@ namespace Lokalisierung
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            // Andere Sprache
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ar-EG");
+        }
     }
 }

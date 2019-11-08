@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lokalisierung"
         mc:Ignorable="d"
-        Title="MainWindow" Height="187.2" Width="234.4">
+        
+        
+        xmlns:p="clr-namespace:Lokalisierung.Properties"
+        Title="{x:Static p:Resources.windowTitle}" Height="187.2" Width="234.4">
+    <!-- Resources.resx unbedingt auf Public setzen !!!! -->
     <Grid>
-
+        <Label Content="{x:Static p:Resources.labelUsernameText}" HorizontalAlignment="Left" Margin="26,38,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="96,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="{x:Static p:Resources.labelPasswordText}" HorizontalAlignment="Left" Margin="26,69,0,0" VerticalAlignment="Top" Width="70"/>
+        <PasswordBox HorizontalAlignment="Left" Height="23" Margin="96,69,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="{x:Static p:Resources.buttonLoginText}" HorizontalAlignment="Left" Margin="35,111,0,0" VerticalAlignment="Top" Width="163" Click="Button_Click"/>
     </Grid>
 </Window>

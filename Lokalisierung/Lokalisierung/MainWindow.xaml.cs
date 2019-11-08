@@ -24,5 +24,11 @@ namespace Lokalisierung
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            // Lokalisierung im Code
+            MessageBox.Show(Properties.Resources.windowTitle);
+        }
     }
 }

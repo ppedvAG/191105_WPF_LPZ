@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="buttonLoginText" xml:space="preserve">
-    <value>Login</value>
+    <value>Einloggen</value>
   </data>
   <data name="labelPasswordText" xml:space="preserve">
-    <value>Password:</value>
+    <value>Passwort:</value>
   </data>
   <data name="labelUsernameText" xml:space="preserve">
-    <value>Username:</value>
+    <value>Benutzername:</value>
   </data>
   <data name="windowTitle" xml:space="preserve">
-    <value>My Application</value>
+    <value>Meine Äpp ;)</value>
   </data>
 </root>
