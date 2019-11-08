@@ -5,9 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Behaviour_Demo"
         mc:Ignorable="d"
+        
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,42,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxBehaviour" HorizontalAlignment="Left" Height="23" Margin="70,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135">
+            <!--<i:Interaction.Behaviors>
+                <local:NumberTextboxBehavior/>
+            </i:Interaction.Behaviors>-->
+        </TextBox>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="70,75,0,0" TextWrapping="Wrap" Text="Ganz Normal" VerticalAlignment="Top" Width="135"/>
+        <Button Content="Toggle" HorizontalAlignment="Left" Margin="219,33,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
     </Grid>
 </Window>
