@@ -17,7 +17,6 @@ namespace Validierung_Demo
         // ValidationResult -> Ist der Wert Valide ist ...
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
-            
             if (string.IsNullOrWhiteSpace(value.ToString()))
                 return new ValidationResult(false,"Das Textfeld ist leer");
 

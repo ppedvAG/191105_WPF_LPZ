@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Validierung_Demo.AgeTextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Validierung_Demo"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <TextBox x:Name="textBoxAge">
+        <TextBox.Text>
+            <Binding Path="Alter" UpdateSourceTrigger="PropertyChanged">
+                <Binding.ValidationRules>
+                    <local:AgeValidationRule x:Name="CurrentValidation"/>
+                </Binding.ValidationRules>
+            </Binding>
+        </TextBox.Text>
+
+        <!-- Welches Error-Template soll angezeigt werden ? -->
+
+        <Validation.ErrorTemplate>
+            <ControlTemplate>
+                <StackPanel Orientation="Vertical">
+                    <!-- Die originale Textbox-->
+                    <Border BorderBrush="Red" BorderThickness="1" HorizontalAlignment="Left">
+                        <AdornedElementPlaceholder x:Name="placeholder"/>
+                    </Border>
+                    <!-- Fehlermeldung in Form eines Rufzeichens-->
+                    <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                </StackPanel>
+            </ControlTemplate>
+        </Validation.ErrorTemplate>
+
+    </TextBox>
+</UserControl>
