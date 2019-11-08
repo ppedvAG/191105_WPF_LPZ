@@ -24,5 +24,10 @@ namespace UserControl_Demo
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(textBoxAlter.TextBoxText);
+        }
     }
 }

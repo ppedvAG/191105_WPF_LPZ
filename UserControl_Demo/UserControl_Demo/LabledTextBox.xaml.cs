@@ -23,6 +23,40 @@ namespace UserControl_Demo
         public LabledTextBox()
         {
             InitializeComponent();
+            this.DataContext = this; // Neue Standarddatenquelle für Bindings bin ich selbst ;)
         }
+
+        //public string LabelText { get; set; }
+        //public string TextBoxText { get; set; }
+
+        // DependencyProperties:
+
+        // propdp + TAB + TAB
+
+
+
+        public string LabelText
+        {
+            get { return (string)GetValue(LabelTextProperty); }
+            set { SetValue(LabelTextProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for LabelText.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty LabelTextProperty =
+            DependencyProperty.Register("LabelText", typeof(string), typeof(LabledTextBox), new PropertyMetadata(""));
+
+
+
+
+        public string TextBoxText
+        {
+            get { return (string)GetValue(TextBoxTextProperty); }
+            set { SetValue(TextBoxTextProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for TextBoxText.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty TextBoxTextProperty =
+            DependencyProperty.Register("TextBoxText", typeof(string), typeof(LabledTextBox), new PropertyMetadata(""));
+
     }
 }

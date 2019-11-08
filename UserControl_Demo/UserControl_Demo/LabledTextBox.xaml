@@ -12,8 +12,8 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
-        <Label Content="Vorname:"/>
-        <TextBox Grid.Column="1"/>
+        <Label Content="{Binding LabelText}"/>
+        <TextBox Grid.Column="1" Text="{Binding TextBoxText}"/>
         
     </Grid>
 </UserControl>
