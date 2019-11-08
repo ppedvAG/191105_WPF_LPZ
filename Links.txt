@@ -12,13 +12,18 @@ https://www.stevensegallery.com/
 http://www.fillmurray.com/
 http://lorempixel.com/400/200/sports
 
+API-Explorer:
 https://any-api.com/
 
+Fake-API:
+https://jsonplaceholder.typicode.com/
+
+// Deutsche Bahn:
 https://developer.deutschebahn.com/store/apis/info?name=Fahrplan-Free&version=v1&provider=DBOpenData#!/default/get_departureBoard_id
 https://api.deutschebahn.com/freeplan/v1/location/Leipzig
 https://api.deutschebahn.com/freeplan/v1/departureBoard/8010205?date=2019-11-06
 
-
+// Deserialisieren:
 http://json2csharp.com/
 
 https://api.deutschebahn.com/freeplan/v1/journeyDetails/68316%252F38742%252F15710%252F14917%252F80%253fstation_evaId%253D8000096
