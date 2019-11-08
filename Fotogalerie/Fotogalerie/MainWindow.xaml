@@ -6,12 +6,25 @@
         xmlns:local="clr-namespace:Fotogalerie"
         mc:Ignorable="d"
         Title="Fotogalerie 📷" Height="450" Width="800"
-        DataContext="{Binding Source={StaticResource Locator}, Path=Main}">
+        DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
+        WindowStartupLocation="CenterScreen">
 
     <DockPanel LastChildFill="True">
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Lade Fotos" Command="{Binding GetFotosCommand}"/>
         </Menu>
-        <ListBox ItemsSource="{Binding Fotos}"/>
+        <ListBox ItemsSource="{Binding Fotos}"
+                 VirtualizingPanel.VirtualizationMode="Recycling">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding AlbumID}"/>
+                        <TextBlock Text="{Binding FotoID}"/>
+                        <TextBlock Text="{Binding Title}"/>
+                        <Image Height="20" Width="20" Source="Icons\kamera.png"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </DockPanel>
 </Window>
