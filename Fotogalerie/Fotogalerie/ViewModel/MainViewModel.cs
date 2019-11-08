@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Fotogalerie.Model;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
@@ -32,7 +33,7 @@ namespace Fotogalerie.ViewModel
         public List<Foto> Fotos { get; set; }
         private void GetFotos()
         {
-            Fotos = service.GetFotos();
+            Fotos = service.GetFotos().Take(100).ToList();
             RaisePropertyChanged(nameof(Fotos)); // <-- Bereits in MVVMLight eingebaut
         }
     }
