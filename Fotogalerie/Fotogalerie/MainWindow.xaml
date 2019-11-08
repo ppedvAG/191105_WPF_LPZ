@@ -13,18 +13,20 @@
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Lade Fotos" Command="{Binding GetFotosCommand}"/>
         </Menu>
-        <ListBox ItemsSource="{Binding Fotos}"
-                 VirtualizingPanel.VirtualizationMode="Recycling">
-            <ListBox.ItemTemplate>
+        <!-- VirtualizingPanel.VirtualizationMode="Recycling" -->
+        <ListView ItemsSource="{Binding Fotos}"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"
+                               IsItemsHost="True"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding AlbumID}"/>
-                        <TextBlock Text="{Binding FotoID}"/>
-                        <TextBlock Text="{Binding Title}"/>
-                        <Image Height="20" Width="20" Source="Icons\kamera.png"/>
-                    </StackPanel>
+                    <local:FotoItem Title="{Binding Title}" ImageURL="Icons\kamera.png"/>
                 </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+            </ListView.ItemTemplate>
+        </ListView>
     </DockPanel>
 </Window>
