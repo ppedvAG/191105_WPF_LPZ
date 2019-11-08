@@ -37,5 +37,17 @@ namespace Behaviour_Demo
                 allBehaviours.Add(beh);
             
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            DetailsWindow w = new DetailsWindow();
+
+            // w.Show();
+
+            this.Visibility = Visibility.Hidden;
+            w.ShowDialog();
+            this.Visibility = Visibility.Visible;
+
+        }
     }
 }

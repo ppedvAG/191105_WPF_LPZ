@@ -17,6 +17,7 @@
         </TextBox>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="70,75,0,0" TextWrapping="Wrap" Text="Ganz Normal" VerticalAlignment="Top" Width="135"/>
         <Button Content="Toggle" HorizontalAlignment="Left" Margin="219,33,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Neues Fenster" HorizontalAlignment="Left" Margin="455,127,0,0" VerticalAlignment="Top" Width="253" Height="145" Click="Button_Click_1"/>
 
     </Grid>
 </Window>
