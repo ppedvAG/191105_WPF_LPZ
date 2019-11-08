@@ -33,3 +33,11 @@ Leipzig:
 900414/311705/314516/142880/80?station_evaId=8000096
 Stuttgart:
 68316%2F38742%2F15710%2F14917%2F80%3fstation_evaId%3D8000096
+
+
+
+MVVM Frameworks:
+Prism (Microsoft)
+MVVMLight (Galasoft)
+MVVMCross (für Mobile Geräte u.Ä.)
+

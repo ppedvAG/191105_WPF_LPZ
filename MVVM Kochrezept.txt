@@ -1,0 +1,16 @@
+1) Neues WPF - Projekt erstellen
+2) Per NuGet "MVVMLight" installieren
+	2.5) Optional: Andere NuGet-Packages installieren (z.B. Newtonsoft.JSON für Deserialisieren usw...)
+	2.6) Bug im Namespace der Datei ViewModelLocator beheben ("using ist falsch -> neu einfügen")
+
+3) Im Ordner "Model" (oder einer anderen DLL) die Geschäftslogik definieren
+4) MainViewModel:
+	* Service (FotoService) als private Variable einfügen
+	* Commands (MvvmLight hat das "RelayCommand" bereits eingebaut)
+	* In der Logik RaisePropertyChanged aufrufen, damit das UI die neue Liste dann anzeigen kann
+5) Oberfläche erstellen
+6) Alles miteinander verknüpfen:
+	* Anleitung ist in der Datei "ViewModelLocator.cs" drinnen
+	* Zeile 9 in das MainWindow.cs hineinkopieren
+	* Bindings für die Steuerelemente erstellen
+
